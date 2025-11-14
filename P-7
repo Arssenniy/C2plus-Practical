@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	int a;
+	int b;
+	string c;
+
+	cout << "Календарь.\n";
+
+	cout << "(1)Январь\n";
+	cout << "(2)Февраль\n";
+	cout << "(3)Март\n";
+	cout << "(4)Апрель\n";
+	cout << "(5)Май\n";
+	cout << "(6)Июнь\n";
+	cout << "(7)Июль\n";
+	cout << "(8)Август\n";
+	cout << "(9)Сентябрь\n";
+	cout << "(10)Октябрь\n";
+	cout << "(11)Ноябрь\n";
+	cout << "(12)Декабрь\n";
+
+	cout << "Выберите месяц: ";
+	cin >> a;
+
+	switch (a) {
+	case 1:
+		c = "Январь";
+		break;
+	case 2:
+		c = "Февраль";
+		break;
+	case 3:
+		c = "Март";
+		break;
+	case 4:
+		c = "Апрель";
+		break;
+	case 5:
+		c = "Май";
+		break;
+	case 6:
+		c = "Июнь";
+		break;
+	case 7:
+		c = "Июль";
+		break;
+	case 8:
+		c = "Август";
+		break;
+	case 9:
+		c = "Сентябрь";
+		break;
+	case 10:
+		c = "Октябрь";
+		break;
+	case 11:
+		c = "Ноябрь";
+		break;
+	case 12:
+		c = "Декабрь";
+		break;
+	default:
+		cout << "Такого месяца нету" << endl;
+		return 0;
+		break;
+	}
+
+	cout << "Введите день месяца: ";
+	cin >> b;
+	cout << "Выбрана дата: " << c << " " << b;
+
+	return 0;
+
+}
