@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	int num1;
+	int num2;
+	char sim;
+
+	while (true) {
+
+	cout << "Введите первое число:\n";
+	cin >> num1;
+
+	cout << "Введите второе число:\n";
+	cin >> num2;
+
+	cout << "Выберите оператор (-, +, /, *, %)\n";
+	cin >> sim;
+
+	
+		if (sim == '-') {
+			cout << num1 - num2 << endl;
+		}
+		else if (sim == '+') {
+			cout << num1 + num2 << endl;
+		}
+		else if (sim == '/') {
+			if (num2 == 0) {
+				cout << "Делить на ноль нельзя" << endl;
+			}
+			else {
+				cout << num1 / num2 << endl;
+			}
+		}
+		else if (sim == '*') {
+			cout << num1 * num2 << endl;
+		}
+		else if (sim == '%') {
+			cout << num1 % num2 << endl;
+			
+		}
+	}
+	return 0;
+}
