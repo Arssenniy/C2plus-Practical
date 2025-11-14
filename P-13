@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	int i = 0;
+	int menu;
+	int menu1;
+	int menu2;
+	int dl;
+	int raz;
+    char sim;
+	char sim1;
+
+	while (true) {
+		cout << "Программа 'Геометрические фигуры'\n";
+		cout << "[1] Линия\n";
+		cout << "[2] Квадрат\n";
+		cout << "Выберите фигуру: ";
+		cin >> menu;
+
+		switch (menu) {
+		case 1:
+			system("cls");
+			cout << "Фигура 'Линия'\n\n";
+			cout << "[1] Горизонтальная\n";
+			cout << "[2] Вертикальная\n\n";
+			cout << "Выберите тип: \n";
+			cin >> menu1;
+
+			switch (menu1) {
+			case 1:
+				system("cls");
+				cout << "Длина линии: ";
+				cin >> dl;
+				cout << "Симвл линии: ";
+				cin >> sim;
+
+				system("cls");
+				while (i < dl) {
+					cout << sim;
+					i++;
+				}
+				break;
+			case 2:
+				system("cls");
+				cout << "Длина: ";
+				cin >> dl;
+				cout << "Симвл: ";
+				cin >> sim;
+
+				system("cls");
+				while (i < dl) {
+					cout << sim << endl;
+					i++;
+				}
+				break;
+			default:
+				cout << "Такого пункта нет в меню\n\n";
+			}
+			break;
+
+		case 2:
+			system("cls");
+			cout << "Фигура 'Квадрат'\n\n";
+			cout << "[1] Заполненый\n";
+			cout << "[2] Пустой\n\n";
+			cout << "Выберите тип: \n";
+			cin >> menu2;
+
+			switch (menu2) {
+			case 1:
+				system("cls");
+				cout << "Размер: \n";
+				cin >> raz;
+				cout << "Симвл: \n";
+				cin >> sim1;
+
+				if (raz <= 0) {
+					cout << "Нельзя брать минусовые размеры";
+				}
+				
+				system("cls");
+				for (int i = 0; i < raz; i++) {
+					for (int j = 0; j < raz; j++) {
+						cout << sim1 << "\x1b[91m.\x1b[0m";
+					}
+					cout << endl;
+				}
+				break;
+			case 2:
+				cout << "Размер: \n";
+				cin >> raz;
+				cout << "Симвл: \n";
+				cin >> sim1;
+
+				system("cls");
+				break;
+			}
+
+
+		default:
+			cout << "Такого пункта нет в меню\n\n";
+		}
+		break;
+	}
+	return 0;
+}
