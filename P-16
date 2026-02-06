@@ -14,7 +14,7 @@ int main() {
     int shir;
     int vis;
     char sim;
-  
+
 
     while (true) {
         cout << "Программа 'Геометрические фигуры'\n";
@@ -35,13 +35,23 @@ int main() {
         case 5:
             system("cls");
             cout << "Фигура 'Решетка'\n\n";
-            cout << "Размер: ";
+            cout << "Размер(Размер должен быть нечетным!): ";
             cin >> raz;
             cout << "Символ: ";
             cin >> sim;
 
             system("cls");
-           
+            for (int i = 1; i < raz + 1; i++) {
+                for (int b = 1; b < raz + 1; b++) {
+                    if (b % 2 == 0 or i % 2 == 0) {
+                        cout << " " << sim;
+                    }
+                    else {
+                        cout << " .";
+                    }
+                }
+                cout << endl;
+            }
 
 
             if (raz <= 0) {
