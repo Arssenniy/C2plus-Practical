@@ -1,0 +1,30 @@
+#include <iostream>;
+
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	int size;
+	char texture;
+
+	cout << "Размер: \n";
+	cin >> size;
+	cout << "Текстура: \n";
+	cin >> texture;
+
+	for (int y = 0; y < size; y++) {
+		for (int x = 0; x < size; x++) {
+			if (y == size/2 -1 and x %2 != 0 || y == size/2  and x %2 == 0) {
+				cout << texture << " ";
+			}
+			else {
+				cout << ". ";
+			}
+		}
+		cout << endl;
+	}
+
+
+}
+
