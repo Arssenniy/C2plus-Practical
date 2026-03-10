@@ -1,0 +1,30 @@
+#include <iostream>;
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	const int N = 5;
+	int massiv[N];
+
+	for (int i = 0; i < N; i++) {
+		cout << i << " | Введите массив: ";
+		cin >> massiv[i];
+	}
+
+	system("cls");
+	for (int i = 0; i < N; i++) {
+		cout << "| Таблица: " << i << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "|  Число  |     Пример     |  Результат  |" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "|    " << massiv[i] << "    |     " << massiv[i] << " + " << massiv[i] << "      |      " << massiv[i] + massiv[i] << "      |" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "|    " << massiv[i] << "    |     " << massiv[i] << " - " << massiv[i] << "      |      " << massiv[i] - massiv[i] << "      |" << endl;
+		cout << "------------------------------------------" << endl;
+		cout << "|    " << massiv[i] << "    |     " << massiv[i] << " / " << massiv[i] << "      |      " << massiv[i] / massiv[i] << "      |" << endl;	
+		cout << "------------------------------------------" << endl;
+		cout << "|    " << massiv[i] << "    |     " << massiv[i] << " * " << massiv[i] << "      |      " << massiv[i] * massiv[i] << "      |" << endl;	
+		cout << "------------------------------------------" << endl << endl;
+	}
+}
