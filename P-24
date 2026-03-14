@@ -1,0 +1,79 @@
+#include <iostream>;
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+
+	const int N = 7;
+	int massiv[N];
+	int menu;
+
+	for (int i = 0; i < N; i++) {
+		cout << i + 1 << " | Введите массив: ";
+		cin >> massiv[i];
+	}
+	while (true) {
+		system("cls");
+		cout << "| + | Найстройка массива: \n\n";
+		cout << "| 1 | Сортировка по возростанию\n";
+		cout << "| 2 | Сортировка по убыванию\n";
+		cout << "| 3 | Переумножить массив\n";
+		cout << "| 4 | Поделить массив\n";
+		cout << "| 5 | Сложить массив\n";
+		cout << "| 6 | Вычессть массив\n";
+		cin >> menu;
+		switch (menu) {
+		case 1:
+			system("cls");
+			cout << "| + | Сортировка по возростанию\n";
+
+			int swap;
+			for (int b = 0; b < N; b++) {
+				for (int i = 0; i < N - 1; i++) {
+					if (massiv[i] > massiv[i + 1]) {
+						swap = massiv[i];
+						massiv[i] = massiv[i + 1];
+						massiv[i + 1] = swap;
+					}
+				}
+			}
+			cout << "| + | Массив: ";
+			for (int i = 0; i < N; i++) {
+				cout << massiv[i] << " ";
+			}
+			system("pause");
+			break;
+		case 3:
+			system("cls");
+			int number;
+			cout << "| + | Переумножить массив\n";
+			cout << "| + | Введите число: ";
+			cin >> number;
+			for (int b = 0; b < N; b++) {
+				for (int i = 0; i < N; i++) {
+				    number * massiv[i];
+				}
+			}
+			system("cls");
+			cout << "| + | Массив: ";
+			for (int i = 0; i < N; i++) {
+				cout << massiv[i] << " ";
+			}
+			system("pause");
+			break;
+		case 6:
+
+			break;
+		default:
+			cout << "Такого пункта нет в меню\n\n";
+			break;
+		}
+	}
+
+	cout << "\nДля продолжения нажмите Enter...";
+	cin.ignore();
+	cin.get();
+	system("cls");
+
+	return 0;
+}
