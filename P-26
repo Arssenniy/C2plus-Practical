@@ -1,0 +1,30 @@
+#include <iostream>
+#include<Windows.h>
+#include<conio.h>
+
+using namespace std;
+void RenderMap(int map[][3]) {
+	for (int y = 0; y < 3; y++) {
+		for (int x = 0; x < 3; x++) {
+			if (map[y][x] == 0) {
+				cout << "\x1b[90m# \x1b[0m";
+			}
+			else if (map[y][x] == 1) {
+				cout << "\x1b[91mX \x1b[0m";
+			}
+			else if (map[y][x] == 2) {
+				cout << "\x1b[94mO \x1b[0m";
+			}
+		}
+		cout << endl;
+	}
+}
+int main() {
+	int player = 1;
+	int map[3][3] = {
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0}
+	};
+	RenderMap(map);
+}
