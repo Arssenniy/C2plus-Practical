@@ -19,12 +19,67 @@ void RenderMap(int map[][3]) {
 		cout << endl;
 	}
 }
+bool CheckIsMove(int map[][3], int player, int y, int x) {
+	if (map[y][x] != 0) {
+		return true;
+	}
+	map[y][x] = player;
+	return false;
+}
+void MovePlayerOnMap(int map[][2], int player, char simvolP1, char simvolP2) {
+	if (player == 1) {
+		cout << "Ходит: " << simvolP1;
+	}
+	else {
+		cout << "Ходит: " << simvolP2;
+	}
+	bool isMove = true;
+	while (isMove) {
+		char move = _getch();
+		switch (move) {
+		case '1':
+			isMove = CheckIsMove(map, player, 0, 0);
+			break;
+		case '2':
+			isMove = CheckIsMove(map, player, 0, 1);
+			break;
+		case '3':
+			isMove = CheckIsMove(map, player, 0, 2);
+			break;
+		case '4':
+			isMove = CheckIsMove(map, player, 1, 0);
+			break;
+		case '5':
+			isMove = CheckIsMove(map, player, 1, 1);
+			break;
+		case '6':
+			isMove = CheckIsMove(map, player, 1, 2);
+			break;
+		case '7':
+			isMove = CheckIsMove(map, player, 2, 0);
+			break;
+		case '8':
+			isMove = CheckIsMove(map, player, 2, 1);
+			break;
+		case '9':
+			isMove = CheckIsMove(map, player, 2, 2);
+			break;
+		}
+	}
+}
 int main() {
-	int player = 1;
+	int player1 = 1;
+	int player2 = 2;
+	char simvolP1 = 'X';
+	char simvolP2 = 'O';
 	int map[3][3] = {
 		{0, 0, 0},
 		{0, 0, 0},
 		{0, 0, 0}
 	};
 	RenderMap(map);
+	CheckIsMove(map, player1);
+	MovePlayerOnMap(map, player1, simvolP1, simvolP2);
+	player1 = player1 == 1 ? player1 = 2 : player1 = 1;
+
 }
